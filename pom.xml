@@ -28,6 +28,7 @@
         <mockito.version>1.10.19</mockito.version>
         <powermock.version>1.6.3</powermock.version>
         <webjars.bootstrap.version>3.3.6</webjars.bootstrap.version>
+        <webjars.jquery.version>2.2.0</webjars.jquery.version>
     </properties>
 
     <dependencyManagement>
@@ -60,6 +61,11 @@
                 <groupId>org.webjars</groupId>
                 <artifactId>bootstrap</artifactId>
                 <version>${webjars.bootstrap.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.webjars</groupId>
+                <artifactId>jquery</artifactId>
+                <version>${webjars.jquery.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
@@ -107,17 +113,14 @@
             <groupId>org.webjars</groupId>
             <artifactId>bootstrap</artifactId>
         </dependency>
+        <dependency>
+            <groupId>org.webjars</groupId>
+            <artifactId>jquery</artifactId>
+        </dependency>
     </dependencies>
 
     <build>
         <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-release-plugin</artifactId>
-                <configuration>
-                    <tagNameFormat>@{project.version}</tagNameFormat>
-                </configuration>
-            </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-jar-plugin</artifactId>

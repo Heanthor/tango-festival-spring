@@ -15,10 +15,17 @@ public class StaticPageController {
 
     @RequestMapping
     public String showStaticPage(HttpServletRequest request) {
-        return "";
+        return getViewTemplatePathFromUrl(request);
     }
 
     private String getViewTemplatePathFromUrl(HttpServletRequest request) {
-        return null;
+
+        String requestsUri = request.getRequestURI();
+
+        if (requestsUri.endsWith("/")) {
+            requestsUri += "index";
+        }
+
+        return requestsUri;
     }
 }
